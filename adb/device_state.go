@@ -16,11 +16,11 @@ type DeviceState int8
 
 const (
 	StateInvalid DeviceState = iota
+	StateUnauthorized
 	StateDisconnected
 	StateOffline
 	StateOnline
 	StateRecovery
-	StatUnauthorized
 )
 
 var deviceStateStrings = map[string]DeviceState{
@@ -28,7 +28,7 @@ var deviceStateStrings = map[string]DeviceState{
 	"offline":      StateOffline,
 	"device":       StateOnline,
 	"recovery":     StateRecovery,
-	"unauthorized": StatUnauthorized,
+	"unauthorized": StateUnauthorized,
 }
 
 func parseDeviceState(str string) (DeviceState, error) {
